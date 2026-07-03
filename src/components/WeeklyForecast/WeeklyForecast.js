@@ -43,8 +43,7 @@ const WeeklyForecast = ({ data }) => {
               alignItems="center"
               sx={{
                 padding: '2px 0 2px',
-                background:
-                  'linear-gradient(0deg, rgba(255, 255, 255, .05) 0%, rgba(171, 203, 222, .05) 100%) 0% 0%',
+                background: '#f1f7fb',
                 boxShadow:
                   'rgba(0, 0, 0, 0.05) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
                 borderRadius: '8px',
@@ -108,8 +107,7 @@ const WeeklyForecast = ({ data }) => {
             alignItems="center"
             sx={{
               padding: '2px 0 2px',
-              background:
-                'linear-gradient(0deg, rgba(255, 255, 255, .05) 0%, rgba(171, 203, 222, .05) 100%) 0% 0%',
+              background: '#f1f7fb',
               boxShadow:
                 'rgba(0, 0, 0, 0.05) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
               borderRadius: '8px',

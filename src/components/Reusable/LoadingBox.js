@@ -13,7 +13,7 @@ export default function LoadingBox(props) {
         gap: '1rem',
       }}
     >
-      <CircularProgress sx={{ color: 'rgba(255,255,255, .8)' }} />
+      <CircularProgress sx={{ color: '#111827' }} />
       {props.children}
     </Box>
   );

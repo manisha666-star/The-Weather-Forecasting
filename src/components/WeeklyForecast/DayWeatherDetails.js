@@ -18,7 +18,7 @@ const DayWeatherDetails = (props) => {
           fontFamily: 'Poppins',
           fontWeight: { xs: '400', sm: '600' },
           fontSize: { xs: '12px', sm: '13px', md: '14px' },
-          color: 'white',
+          color: '#111827',
           lineHeight: 1,
           height: '31px',
           alignItems: 'center',
@@ -51,7 +51,7 @@ const DayWeatherDetails = (props) => {
           component="h4"
           sx={{
             fontSize: { xs: '12px', md: '14px' },
-            color: 'rgba(255,255,255, .8)',
+            color: '#475569',
             lineHeight: 1,
             fontFamily: 'Roboto Condensed',
           }}

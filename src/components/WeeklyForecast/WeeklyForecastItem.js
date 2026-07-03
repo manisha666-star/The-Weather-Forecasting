@@ -41,7 +41,7 @@ const WeeklyForecastItem = ({ value, type }) => {
         alignItems: 'center',
         justifyContent: 'center',
         height: '31px',
-        color: 'rgba(255, 255, 255, .7)',
+        color: '#64748b',
         gap: { xs: '3px', sm: '4px', md: '6px' },
         width: '100%',
       }}
@@ -53,7 +53,7 @@ const WeeklyForecastItem = ({ value, type }) => {
         sx={{
           fontSize: { xs: '12px', sm: '13px' },
           fontWeight: { xs: '400', sm: '600' },
-          color: 'white',
+          color: '#111827',
           fontFamily: 'Poppins',
           lineHeight: 1,
         }}

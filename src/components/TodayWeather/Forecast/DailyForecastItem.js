@@ -6,8 +6,7 @@ const DailyForecastItem = (props) => {
   return (
     <Box
       sx={{
-        background:
-          'linear-gradient(0deg, rgba(255, 255, 255, .05) 0%, rgba(171, 203, 222, .05) 100%) 0% 0%',
+        background: '#f1f7fb',
         borderRadius: '8px',
         boxShadow:
           'rgba(0, 0, 0, 0.05) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
@@ -22,7 +21,7 @@ const DailyForecastItem = (props) => {
         sx={{
           fontWeight: '400',
           fontSize: { xs: '10px', sm: '12px' },
-          color: 'rgba(255, 255, 255, .7)',
+          color: '#64748b',
           lineHeight: 1,
           padding: '4px',
           fontFamily: 'Poppins',
@@ -34,7 +33,7 @@ const DailyForecastItem = (props) => {
         sx={{
           display: 'flex',
           alignItems: 'center',
-          color: 'white',
+          color: '#111827',
           padding: '4px',
         }}
       >
@@ -59,7 +58,7 @@ const DailyForecastItem = (props) => {
         sx={{
           fontWeight: '600',
           fontSize: { xs: '12px', sm: '14px' },
-          color: 'white',
+          color: '#111827',
           textTransform: 'uppercase',
           lineHeight: 1,
           marginBottom: { xs: '8px', md: '0' },

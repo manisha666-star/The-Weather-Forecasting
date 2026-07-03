@@ -5,11 +5,15 @@ body {
   font-family: 'Poppins', Arial, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   min-height: 100vh;
-  background: linear-gradient(-35deg, #000428 0%, #004e92);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.95) 0 12%, transparent 28%),
+    radial-gradient(circle at 78% 12%, rgba(255, 255, 255, 0.75) 0 10%, transparent 24%),
+    linear-gradient(135deg, #eef7ff 0%, #dceef9 45%, #f8fbff 100%);
 }
 
 code {

@@ -82,7 +82,7 @@ function App() {
         component="h4"
         sx={{
           fontSize: { xs: '12px', sm: '14px' },
-          color: 'rgba(255,255,255, .85)',
+          color: '#111827',
           fontFamily: 'Poppins',
           textAlign: 'center',
           margin: '2rem 0',
@@ -138,7 +138,7 @@ function App() {
             component="h3"
             sx={{
               fontSize: { xs: '10px', sm: '12px' },
-              color: 'rgba(255, 255, 255, .8)',
+              color: '#111827',
               lineHeight: 1,
               fontFamily: 'Poppins',
             }}
@@ -152,61 +152,90 @@ function App() {
 
   return (
     <Container
+      disableGutters
       sx={{
-        maxWidth: { xs: '95%', sm: '80%', md: '1100px' },
+        maxWidth: { xs: 'calc(100% - 2rem)', sm: '80%', md: '1100px' },
         width: '100%',
         height: '100%',
-        margin: '0 auto',
-        padding: '1rem 0 3rem',
+        margin: { xs: '1rem auto 0', sm: '2.5rem auto 0' },
+        padding: { xs: '1.5rem 0 3rem', sm: '2rem 0 3.5rem' },
         marginBottom: '1rem',
+        backgroundColor: '#ffffff',
+        overflow: 'hidden',
         borderRadius: {
           xs: 'none',
           sm: '0 0 1rem 1rem',
         },
         boxShadow: {
           xs: 'none',
-          sm: 'rgba(0,0,0, 0.5) 0px 10px 15px -3px, rgba(0,0,0, 0.5) 0px 4px 6px -2px',
+          sm: 'rgba(15, 23, 42, 0.18) 0px 18px 45px -18px, rgba(15, 23, 42, 0.12) 0px 8px 18px -12px',
         },
       }}
     >
-      <Grid container columnSpacing={2}>
+      <Grid container columnSpacing={{ xs: 0, md: 2 }}>
         <Grid item xs={12}>
           <Box
-            display="flex"
-            justifyContent="space-between"
+            display="grid"
             alignItems="center"
             sx={{
               width: '100%',
-              marginBottom: '1rem',
+              boxSizing: 'border-box',
+              gridTemplateColumns: {
+                xs: 'minmax(0, 1fr) auto minmax(40px, 1fr)',
+                sm: '1fr auto 1fr',
+              },
+              columnGap: { xs: '.75rem', sm: '1.5rem' },
+              marginBottom: { xs: '1.25rem', sm: '1.75rem' },
+              padding: { xs: '0 1.75rem', sm: '0 2.25rem', md: '0 3rem' },
             }}
           >
             <Box
               component="img"
               sx={{
                 height: { xs: '16px', sm: '22px', md: '26px' },
+                maxWidth: { xs: '120px', sm: '180px' },
                 width: 'auto',
+                justifySelf: 'start',
               }}
               alt="logo"
               src={Logo}
             />
 
-            <UTCDatetime />
+            <UTCDatetime color="#111827" />
             <Link
-              href="https://github.com/Amin-Awinti"
+              href="https://github.com/manisha666-star/The-Weather-Forecasting"
               target="_blank"
               underline="none"
-              sx={{ display: 'flex' }}
+              sx={{
+                display: 'flex',
+                justifySelf: 'end',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: { xs: '32px', sm: '36px' },
+                height: { xs: '32px', sm: '36px' },
+                borderRadius: '50%',
+                '&:hover': {
+                  backgroundColor: 'rgba(17,24,39,.08)',
+                },
+              }}
             >
               <GitHubIcon
                 sx={{
                   fontSize: { xs: '20px', sm: '22px', md: '26px' },
-                  color: 'white',
+                  color: '#111827',
                   '&:hover': { color: '#2d95bd' },
                 }}
               />
             </Link>
           </Box>
-          <Search onSearchChange={searchChangeHandler} />
+          <Box
+            sx={{
+              boxSizing: 'border-box',
+              padding: { xs: '0 1.75rem', sm: '0 2.25rem', md: '0 3rem' },
+            }}
+          >
+            <Search onSearchChange={searchChangeHandler} />
+          </Box>
         </Grid>
         {appContent}
       </Grid>
