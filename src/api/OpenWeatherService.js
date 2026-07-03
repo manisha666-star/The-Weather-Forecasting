@@ -1,43 +1,34 @@
-const GEO_API_URL = 'https://wft-geo-db.p.rapidapi.com/v1/geo';
-
-const WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5';
-const WEATHER_API_KEY = 'Your API KEY';
-
-const GEO_API_OPTIONS = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': '4f0dcce84bmshac9e329bd55fd14p17ec6fjsnff18c2e61917',
-    'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com',
-  },
-};
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || '';
 
 export async function fetchWeatherData(lat, lon) {
   try {
-    let [weatherPromise, forcastPromise] = await Promise.all([
-      fetch(
-        `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
-      ),
-      fetch(
-        `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
-      ),
-    ]);
+    const response = await fetch(
+      `${API_BASE_URL}/api/weather?lat=${lat}&lon=${lon}`
+    );
+    const data = await response.json();
 
-    const weatherResponse = await weatherPromise.json();
-    const forcastResponse = await forcastPromise.json();
-    return [weatherResponse, forcastResponse];
+    if (!response.ok) {
+      throw new Error(data.message || 'Unable to fetch weather data');
+    }
+
+    return [data.current, data.forecast];
   } catch (error) {
     console.log(error);
+    throw error;
   }
 }
 
 export async function fetchCities(input) {
   try {
     const response = await fetch(
-      `${GEO_API_URL}/cities?minPopulation=10000&namePrefix=${input}`,
-      GEO_API_OPTIONS
+      `${API_BASE_URL}/api/cities?search=${encodeURIComponent(input)}`
     );
-
     const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || 'Unable to fetch cities');
+    }
+
     return data;
   } catch (error) {
     console.log(error);
